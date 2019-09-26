@@ -5,7 +5,10 @@ let server = http.createServer(function(req,res){
   if(req.url == '/api/users'){
     res.setHeader('Access-Control-Allow-Origin','*');
     res.end(JSON.stringify(users));
-  }else{
+  }else if (req.url == '/users'){
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.end('users');
+  } else {
     res.end('Now Found!');
   }
 });
